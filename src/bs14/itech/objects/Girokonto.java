@@ -53,7 +53,9 @@ public class Girokonto implements BankAccount {
 	
 	public void paymentOut(double amount) {
 		if (amount > 0) {
-			balance = balance - amount;
+			if (balance - amount > diporahmen) {
+				balance = balance - amount;	
+			}
 		}
 	}
 	
